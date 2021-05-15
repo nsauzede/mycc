@@ -16,4 +16,4 @@ mycc: mycc.o args.o tokenize.o parse.o codegen.o
 include test.mk
 
 clean:
-	$(RM) $(TARGETS) *.o
+	$(RM) $(TARGETS) *.o *.pp.c
