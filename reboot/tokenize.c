@@ -22,6 +22,15 @@ Token *tokenize(char *text) {
 		if (!c) {
 			break;
 		}
+		if (c == '#') {
+			while (c != '\n') {
+				c = *text++;
+			}
+			if (!c) {
+				break;
+			}
+			continue;
+		}
 		if (isblank(c)) {
 			continue;
 		}
