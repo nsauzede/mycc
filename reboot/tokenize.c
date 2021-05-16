@@ -1,30 +1,18 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 
 #include "mycc.h"
 
-char *read_text(char *file) {
-	FILE *in = fopen(file, "r");
-	fseek(in, 0, SEEK_END);
-	long len = ftell(in);
-	rewind(in);
-	char *text = calloc(1, len);
-	fread(text, len, 1, in);
-	fclose(in);
-	return text;
-}
-
-Token *tokenize(char *text) {
+void tokenize(Context *ctx) {
 //	printf("text=[%s]\n", text);
 	while (1) {
-		char c = *text++;
+		char c = *ctx->text++;
 		if (!c) {
 			break;
 		}
 		if (c == '#') {
 			while (c != '\n') {
-				c = *text++;
+				c = *ctx->text++;
 			}
 			if (!c) {
 				break;
@@ -36,5 +24,4 @@ Token *tokenize(char *text) {
 		}
 		printf("%c", c);
 	}
-	return 0;
 }

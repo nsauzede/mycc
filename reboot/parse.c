@@ -4,6 +4,5 @@
 
 #include "mycc.h"
 
-ASTNode *parse(Token *tokens) {
-	return 0;
+void parse(Context *ctx) {
 }

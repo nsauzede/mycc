@@ -1,6 +1,6 @@
 
-test: mycc mycc.pp.c
-	./mycc mycc.pp.c
+test: mycc mycc.c
+	./mycc mycc.c
 	@echo "Ok"
 
 %.pp.c: %.c

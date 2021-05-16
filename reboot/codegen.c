@@ -4,5 +4,5 @@
 
 #include "mycc.h"
 
-void codegen(ASTNode *ast) {
+void codegen(Context *ctx) {
 }

@@ -10,15 +10,16 @@ struct ASTNode {
 };
 
 typedef struct Context {
-	char *file;
+	char *input_file;
+	char *output_file;
+	int preprocess_only;
+
+	char *text;
+	Token *tokens;
+	ASTNode *ast;
 } Context;
 
-char *read_text(char *file);
-
-Token *tokenize(char *text);
-
-ASTNode *parse(Token *tokens);
-
-void codegen(ASTNode *ast);
-
 void parse_args(Context *ctx, int argc, char *argv[]);
+void tokenize(Context *ctx);
+void parse(Context *ctx);
+void codegen(Context *ctx);
