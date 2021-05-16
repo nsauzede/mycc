@@ -1,6 +1,10 @@
 
+typedef enum {
+	TK_IDENT,
+} TokenType;
 typedef struct Token Token;
 struct Token {
+	TokenType type;
 	Token *next;
 };
 

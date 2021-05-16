@@ -55,7 +55,7 @@ void parse_args(Context *ctx, int argc, char *argv[]) {
 		char line[1000];
 		memset(line, 0, sizeof(line));
 		fgets(line, sizeof(line), p);
-		printf("%s\n", line);
+//		printf("%s\n", line);
 	}
 	pclose(p);
 	if (ctx->preprocess_only) {
